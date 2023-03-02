@@ -1,0 +1,12 @@
+apiVersion: microsegmentation.security.io/v1alpha1
+kind: MicrosegNetworkPolicy
+metadata:
+  labels:
+    app.kubernetes.io/name: microsegnetworkpolicy
+    app.kubernetes.io/instance: microsegnetworkpolicy-sample
+    app.kubernetes.io/part-of: segmentation
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: segmentation
+  name: microsegnetworkpolicy-sample
+spec:
+  # TODO(user): Add fields here

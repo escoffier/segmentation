@@ -1,0 +1,27 @@
+# permissions for end users to view microseggroups.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: microseggroup-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: segmentation
+    app.kubernetes.io/part-of: segmentation
+    app.kubernetes.io/managed-by: kustomize
+  name: microseggroup-viewer-role
+rules:
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microseggroups
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microseggroups/status
+  verbs:
+  - get

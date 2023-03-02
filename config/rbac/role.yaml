@@ -1,0 +1,163 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegclustergroups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegclustergroups/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegclustergroups/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegclusternetworkpolicies
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegclusternetworkpolicies/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegclusternetworkpolicies/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microseggroups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microseggroups/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microseggroups/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegnetworkpolicies
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegnetworkpolicies/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - microsegnetworkpolicies/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - netwokpolicyrules
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - netwokpolicyrules/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - netwokpolicyrules/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - networkpolicyruleslices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - networkpolicyruleslices/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - networkpolicyruleslices/status
+  verbs:
+  - get
+  - patch
+  - update

@@ -1,0 +1,27 @@
+# permissions for end users to view netwokpolicyrules.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: netwokpolicyrule-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: segmentation
+    app.kubernetes.io/part-of: segmentation
+    app.kubernetes.io/managed-by: kustomize
+  name: netwokpolicyrule-viewer-role
+rules:
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - netwokpolicyrules
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - netwokpolicyrules/status
+  verbs:
+  - get
