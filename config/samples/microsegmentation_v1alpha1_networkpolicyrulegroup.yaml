@@ -1,0 +1,12 @@
+apiVersion: microsegmentation.security.io/v1alpha1
+kind: NetworkPolicyRuleGroup
+metadata:
+  labels:
+    app.kubernetes.io/name: networkpolicyrulegroup
+    app.kubernetes.io/instance: networkpolicyrulegroup-sample
+    app.kubernetes.io/part-of: segmentation
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: segmentation
+  name: networkpolicyrulegroup-sample
+spec:
+  # TODO(user): Add fields here

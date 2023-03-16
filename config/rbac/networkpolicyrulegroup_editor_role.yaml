@@ -1,0 +1,31 @@
+# permissions for end users to edit networkpolicyrulegroups.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: networkpolicyrulegroup-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: segmentation
+    app.kubernetes.io/part-of: segmentation
+    app.kubernetes.io/managed-by: kustomize
+  name: networkpolicyrulegroup-editor-role
+rules:
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - networkpolicyrulegroups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - microsegmentation.security.io
+  resources:
+  - networkpolicyrulegroups/status
+  verbs:
+  - get

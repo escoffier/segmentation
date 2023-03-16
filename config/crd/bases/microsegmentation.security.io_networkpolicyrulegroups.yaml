@@ -5,20 +5,20 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.11.1
   creationTimestamp: null
-  name: networkpolicyruleslice.microsegmentation.security.io
+  name: networkpolicyrulegroups.microsegmentation.security.io
 spec:
   group: microsegmentation.security.io
   names:
-    kind: NetworkPolicyRuleSlice
-    listKind: NetworkPolicyRuleSliceList
-    plural: networkpolicyruleslice
-    singular: networkpolicyruleslice
+    kind: NetworkPolicyRuleGroup
+    listKind: NetworkPolicyRuleGroupList
+    plural: networkpolicyrulegroups
+    singular: networkpolicyrulegroup
   scope: Cluster
   versions:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: NetworkPolicyRuleSlice is the Schema for the networkpolicyruleslices
+        description: NetworkPolicyRuleGroup is the Schema for the networkpolicyrulegroups
           API
         properties:
           apiVersion:
@@ -34,13 +34,13 @@ spec:
           metadata:
             type: object
           spec:
-            description: NetworkPolicyRuleSliceSpec defines the desired state of NetworkPolicyRuleSlice
+            description: NetworkPolicyRuleGroupSpec defines the desired state of NetworkPolicyRuleGroup
             properties:
               nodeName:
                 type: string
               policy:
-                description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-                  Important: Run "make" to regenerate code after modifying this file'
+                description: Foo is an example field of NetworkPolicyRuleGroup. Edit
+                  networkpolicyrulegroup_types.go to remove/update
                 type: string
               rules:
                 items:
@@ -121,8 +121,8 @@ spec:
             - rules
             type: object
           status:
-            description: NetworkPolicyRuleSliceStatus defines the observed state of
-              NetworkPolicyRuleSlice
+            description: NetworkPolicyRuleGroupStatus defines the observed state of
+              NetworkPolicyRuleGroup
             type: object
         type: object
     served: true

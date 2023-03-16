@@ -23,45 +23,45 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// NetwokPolicyRuleSpec defines the desired state of NetwokPolicyRule
-type NetwokPolicyRuleSpec struct {
+// NetworkPolicyRuleGroupSpec defines the desired state of NetworkPolicyRuleGroup
+type NetworkPolicyRuleGroupSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	// Foo is an example field of NetworkPolicyRuleGroup. Edit networkpolicyrulegroup_types.go to remove/update
 	Policy   string     `json:"policy"`
 	NodeName string     `json:"nodeName"`
 	Rules    []NodeRule `json:"rules"`
 }
 
-// NetwokPolicyRuleStatus defines the observed state of NetwokPolicyRule
-type NetwokPolicyRuleStatus struct {
+// NetworkPolicyRuleGroupStatus defines the observed state of NetworkPolicyRuleGroup
+type NetworkPolicyRuleGroupStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
-//+genclient:nonNamespaced
-//+genclient
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
-// +kubebuilder:resource:scope=Cluster
+//+kubebuilder:resource:scope=Cluster
 
-// NetwokPolicyRule is the Schema for the netwokpolicyrules API
-type NetwokPolicyRule struct {
+// NetworkPolicyRuleGroup is the Schema for the networkpolicyrulegroups API
+type NetworkPolicyRuleGroup struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   NetwokPolicyRuleSpec   `json:"spec,omitempty"`
-	Status NetwokPolicyRuleStatus `json:"status,omitempty"`
+	Spec   NetworkPolicyRuleGroupSpec   `json:"spec,omitempty"`
+	Status NetworkPolicyRuleGroupStatus `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 
-// NetwokPolicyRuleList contains a list of NetwokPolicyRule
-type NetwokPolicyRuleList struct {
+// NetworkPolicyRuleGroupList contains a list of NetworkPolicyRuleGroup
+type NetworkPolicyRuleGroupList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []NetwokPolicyRule `json:"items"`
+	Items           []NetworkPolicyRuleGroup `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&NetwokPolicyRule{}, &NetwokPolicyRuleList{})
+	SchemeBuilder.Register(&NetworkPolicyRuleGroup{}, &NetworkPolicyRuleGroupList{})
 }

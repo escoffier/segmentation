@@ -39,8 +39,9 @@ type NodeRule struct {
 type NetworkPolicyRuleSliceSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of NetworkPolicyRuleSlice. Edit networkpolicyruleslice_types.go to remove/update
+	Policy   string     `json:"policy"`
+	NodeName string     `json:"nodeName"`
+	Rules    []NodeRule `json:"rules"`
 }
 
 // NetworkPolicyRuleSliceStatus defines the observed state of NetworkPolicyRuleSlice
@@ -60,12 +61,8 @@ type NetworkPolicyRuleSlice struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Policy   string     `json:"policy"`
-	NodeName string     `json:"nodeName"`
-	Rules    []NodeRule `json:"rules"`
-
-	// Spec   NetworkPolicyRuleSliceSpec   `json:"spec,omitempty"`
-	// Status NetworkPolicyRuleSliceStatus `json:"status,omitempty"`
+	Spec   NetworkPolicyRuleSliceSpec   `json:"spec,omitempty"`
+	Status NetworkPolicyRuleSliceStatus `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
