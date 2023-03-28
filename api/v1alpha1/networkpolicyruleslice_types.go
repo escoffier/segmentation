@@ -23,15 +23,19 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+type Address struct {
+	IP           string `json:"ip"`
+	PodReference uint64 `json:"podReference"`
+}
 type NodeRule struct {
 	Priority    int                 `json:"priority,omitempty"`
 	Protocol    string              `json:"prtocol,omitempty"`
 	Direction   string              `json:"direction,omitempty"`
 	Action      string              `json:"action"`
 	Ports       []NetworkPolicyPort `json:"ports,omitempty"`
-	ToAddresses []string            `json:"toAddresses,omitempty"`
+	ToAddresses []Address           `json:"toAddresses,omitempty"`
 	ToIPBlock   *IPBlock            `json:"toIPBlock,omitempty"`
-	FromAddress []string            `json:"fromAddress,omitempty"`
+	FromAddress []Address           `json:"fromAddress,omitempty"`
 	FromIPBlock *IPBlock            `json:"fromIPBlock,omitempty"`
 }
 

@@ -51,7 +51,16 @@ spec:
                       type: string
                     fromAddress:
                       items:
-                        type: string
+                        properties:
+                          ip:
+                            type: string
+                          podReference:
+                            format: int64
+                            type: integer
+                        required:
+                        - ip
+                        - podReference
+                        type: object
                       type: array
                     fromIPBlock:
                       properties:
@@ -100,7 +109,16 @@ spec:
                       type: string
                     toAddresses:
                       items:
-                        type: string
+                        properties:
+                          ip:
+                            type: string
+                          podReference:
+                            format: int64
+                            type: integer
+                        required:
+                        - ip
+                        - podReference
+                        type: object
                       type: array
                     toIPBlock:
                       properties:
