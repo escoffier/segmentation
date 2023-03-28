@@ -55,11 +55,19 @@ spec:
                           ip:
                             type: string
                           podReference:
-                            format: int64
-                            type: integer
+                            properties:
+                              cluster:
+                                type: string
+                              name:
+                                type: string
+                              namespace:
+                                type: string
+                            required:
+                            - name
+                            - namespace
+                            type: object
                         required:
                         - ip
-                        - podReference
                         type: object
                       type: array
                     fromIPBlock:
@@ -113,11 +121,19 @@ spec:
                           ip:
                             type: string
                           podReference:
-                            format: int64
-                            type: integer
+                            properties:
+                              cluster:
+                                type: string
+                              name:
+                                type: string
+                              namespace:
+                                type: string
+                            required:
+                            - name
+                            - namespace
+                            type: object
                         required:
                         - ip
-                        - podReference
                         type: object
                       type: array
                     toIPBlock:

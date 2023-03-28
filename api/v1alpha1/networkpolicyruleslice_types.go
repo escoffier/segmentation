@@ -23,10 +23,17 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-type Address struct {
-	IP           string `json:"ip"`
-	PodReference uint64 `json:"podReference"`
+type EntityReference struct {
+	Cluster   string `json:"cluster,omitempty"`
+	Namespace string `json:"namespace"`
+	Name      string `json:"name"`
 }
+
+type Address struct {
+	IP           string          `json:"ip"`
+	PodReference EntityReference `json:"podReference,omitempty"`
+}
+
 type NodeRule struct {
 	Priority    int                 `json:"priority,omitempty"`
 	Protocol    string              `json:"prtocol,omitempty"`
