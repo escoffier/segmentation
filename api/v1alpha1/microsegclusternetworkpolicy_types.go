@@ -84,7 +84,7 @@ type Rule struct {
 	// List of destinations for outgoing traffic of pods selected for this rule.
 	To            []NetworkPolicyPeer `json:"to,omitempty"`
 	Name          string              `json:"name,omitempty"`
-	EnableLogging bool                `json:"enableLogging"`
+	EnableLogging bool                `json:"enableLogging,omitempty"`
 }
 
 type NetworkPolicyPeer struct {

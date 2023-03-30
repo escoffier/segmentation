@@ -433,7 +433,6 @@ spec:
                       type: array
                   required:
                   - action
-                  - enableLogging
                   type: object
                 type: array
               group:
@@ -834,7 +833,6 @@ spec:
                       type: array
                   required:
                   - action
-                  - enableLogging
                   type: object
                 type: array
               namespaceSelector:

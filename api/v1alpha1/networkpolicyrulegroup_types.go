@@ -22,6 +22,28 @@ import (
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
+type EntityReference struct {
+	Cluster   string `json:"cluster,omitempty"`
+	Namespace string `json:"namespace"`
+	Name      string `json:"name"`
+}
+
+type Address struct {
+	IP           string          `json:"ip"`
+	PodReference EntityReference `json:"podReference,omitempty"`
+}
+
+type NodeRule struct {
+	Priority    int                 `json:"priority,omitempty"`
+	Protocol    string              `json:"prtocol,omitempty"`
+	Direction   string              `json:"direction,omitempty"`
+	Action      string              `json:"action"`
+	Ports       []NetworkPolicyPort `json:"ports,omitempty"`
+	ToAddresses []Address           `json:"toAddresses,omitempty"`
+	ToIPBlock   *IPBlock            `json:"toIPBlock,omitempty"`
+	FromAddress []Address           `json:"fromAddress,omitempty"`
+	FromIPBlock *IPBlock            `json:"fromIPBlock,omitempty"`
+}
 
 // NetworkPolicyRuleGroupSpec defines the desired state of NetworkPolicyRuleGroup
 type NetworkPolicyRuleGroupSpec struct {
