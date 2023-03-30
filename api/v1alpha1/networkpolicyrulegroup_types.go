@@ -29,8 +29,8 @@ type EntityReference struct {
 }
 
 type Address struct {
-	IP           string          `json:"ip"`
-	PodReference EntityReference `json:"podReference,omitempty"`
+	IP           string           `json:"ip"`
+	PodReference *EntityReference `json:"podReference,omitempty"`
 }
 
 type NodeRule struct {
